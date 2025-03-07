@@ -1,0 +1,37 @@
+@use "fonts"; // виклик шрифтів
+
+$primary-color: #37cece;
+$action-color:#ECFBFB;
+$hover-color: #2ca8a8;
+$background-color: white;
+$error-color: #f03800;
+$button-color: transparent;
+$font-color: #3d3d3d;
+$font-color-action: #727272;
+$font-medium: 19px;
+$font-small: 15px;
+$font-banner: 70px;
+$font-medium-liquid: 1.8vw;
+$font-small-liquid: 1.1vw;
+$font-banner-liquid: 5.2vw;
+$small-element-liquid: .8vw;
+$margin-regular: 5%;
+$gap-regular: 2vw;
+$gap-small: 1vw;
+
+$button-width: 5vw;
+$button-height: 1.3vw;
+
+
+//змінні для bold шрифту
+$bold-font-family: "segoe", sans-serif;
+$bold-font-weight: bold;
+
+//змінні для semibold шрифту
+$semi_bold-font-family: "segoe", sans-serif;
+$semi_bold-font-weight: 600;
+
+// змінні для параграфу
+$paragraph-font-family: "segoe", sans-serif;
+$paragraph-font-weight: normal;
+ 

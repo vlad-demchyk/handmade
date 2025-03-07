@@ -1,0 +1,28 @@
+@use "variables" as *; //виклик змінних
+@use "fonts";// виклик шрифтів
+
+@mixin bold-text { //базові стилі для головного тексту
+    font-family: $bold-font-family;
+    font-weight: $bold-font-weight;
+    color: $font-color;
+    text-align: left;
+} //для виклику @include
+
+@mixin paragraph-text { //базові стилі для параграфу
+    font-family: $paragraph-font-family;
+    font-weight: $paragraph-font-weight;
+    color: $font-color;
+    text-align: left;
+} //для виклику @include
+@mixin semi-text { //базові стилі для параграфу
+    font-family: $semi_bold-font-family;
+    font-weight: $semi_bold-font-weight;
+    color: $font-color;
+    text-align: left;
+} //для виклику @include
+
+body{
+    margin-inline: $margin-regular;
+    margin-block: 0;
+    background-color: $background-color;
+}
