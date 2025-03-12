@@ -7,7 +7,8 @@
 
 .products_layout {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  margin-block: $margin-regular;
+  grid-template-columns: repeat(3, 1fr);
   gap: $gap-small;
   // overflow: hidden;
 }
@@ -20,6 +21,7 @@
   }
   margin: $gap-small;
   display: grid;
+  position: relative;
   grid-gap: $gap-small/2;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, auto);
@@ -30,13 +32,101 @@
     "name name"
     "price color";
 
-  > img {
+  > .image_card {
     grid-area: image;
-    aspect-ratio: 1/1;
-    // width: 300px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+    position: relative;
+
+    > .setting-button {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      position: absolute;
+      width: $icon-size-small;
+      height: $icon-size-small;
+      aspect-ratio: 1/1;
+      border-radius: $border-radius;
+      text-decoration: none;
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: solid $primary-color;
+      cursor: pointer;
+      bottom: 8%;
+
+      &:hover {
+        border: solid $hover-color;
+
+        &.to_cart {
+          > .icon_color {
+            > * {
+              fill: $hover-color;
+              stroke: $hover-color;
+            }
+          }
+        }
+        &.to_favorite {
+          > .icon_color {
+            > * {
+              stroke: $hover-color;
+            }
+          }
+        }
+      }
+
+      &.added:hover {
+        background-color: $hover-color;
+      }
+
+      &.added {
+        background-color: $primary-color;
+      }
+
+      > .icon_color {
+        width: 80%;
+        aspect-ratio: 1/1;
+        height: auto;
+        > * {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &.to_cart {
+        right: 22%;
+        > .icon_color {
+          > * {
+            fill: $primary-color;
+            stroke: $primary-color;
+          }
+
+          > *.added {
+            fill: $background-color;
+            stroke: $background-color;
+          }
+        }
+      }
+
+      &.to_favorite {
+        right: 5%;
+        > .icon_color {
+          > * {
+            fill: transparent;
+            stroke: $primary-color;
+          }
+
+          > *.added {
+            stroke: $background-color;
+          }
+        }
+      }
+    }
+
+    > img {
+      aspect-ratio: 1/1;
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
   }
   > .item_name {
     grid-area: name;
@@ -63,20 +153,5 @@
     opacity: 0.8;
     box-sizing: border-box;
     z-index: 1;
-
-    // &::after {
-    //     margin: 0;
-    //   content: "";
-    //   position: absolute;
-    //   width: 150%;
-    //   height: 150%;
-    //   box-sizing: content-box;
-    //   border-radius: 100%;
-    //   border: solid rgba(0, 0, 0, 0.25);
-    //   top: 50%;
-    //   z-index: -1;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
   }
 }

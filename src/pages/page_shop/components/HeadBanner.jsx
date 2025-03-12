@@ -39,25 +39,6 @@ function HeadBanner() {
     );
   };
 
-  //   const [bannerWidth, setBannerWidth] = useState(null);
-  //   const [currentSlide, setCurrentSlide] = useState[0];
-
-  //   function calcWidth() {
-  //     if (wrapper.current) {
-  //       setBannerWidth(wrapper.current.offsetWidth); // зберігаємо ширину в стані
-  //     }
-  //   }
-
-  //   useEffect(() => {
-  //     calcWidth();
-  //     window.addEventListener("resize", calcWidth);
-  //     console.log(bannerWidth);
-
-  //     return () => {
-  //       window.removeEventListener("resize", calcWidth); // очищаємо слухача при розмонтуванні
-  //     };
-  //   }, [bannerWidth]);
-
   return (
     <div ref={wrapper} className="wrapper_banner">
       <button

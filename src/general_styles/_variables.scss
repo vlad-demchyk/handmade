@@ -2,7 +2,7 @@
 
 $primary-color: #37cece;
 $action-color:#ECFBFB;
-$hover-color: #2ca8a8;
+$hover-color: #2CA7A7;
 $background-color: white;
 $error-color: #f03800;
 $button-color: transparent;
@@ -16,8 +16,10 @@ $font-small-liquid: 1.1vw;
 $font-banner-liquid: 5.2vw;
 $small-element-liquid: .8vw;
 $margin-regular: 5%;
+$border-radius: clamp(1px, 0.8vw, 40px);
 $gap-regular: 2vw;
 $gap-small: 1vw;
+$icon-size-small: 2.9vw;
 
 $button-width: 5vw;
 $button-height: 1.3vw;

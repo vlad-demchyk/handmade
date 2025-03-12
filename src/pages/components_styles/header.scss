@@ -141,7 +141,7 @@
         align-items: center;
         // padding-inline: 10%;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: $border-radius;
         border: none;
         background-color: $primary-color;
         @include paragraph-text;
