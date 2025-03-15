@@ -1,7 +1,8 @@
 @use "fonts"; // виклик шрифтів
 
 $primary-color: #37cece;
-$action-color:#ECFBFB;
+$gray-color: #f8f8f8;
+$action-color: #ECFBFB;
 $hover-color: #2CA7A7;
 $background-color: white;
 $error-color: #f03800;
@@ -16,6 +17,7 @@ $font-small-liquid: 1.1vw;
 $font-banner-liquid: 5.2vw;
 $small-element-liquid: .8vw;
 $margin-regular: 5%;
+$margin-small: 5%/2;
 $border-radius: clamp(1px, 0.8vw, 40px);
 $gap-regular: 2vw;
 $gap-small: 1vw;

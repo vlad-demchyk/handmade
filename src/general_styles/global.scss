@@ -21,8 +21,39 @@
     text-align: left;
 } //для виклику @include
 
+@mixin button-style{
+    display: flex;
+    justify-content: center;
+    width: 105px;
+    height: 35px;
+    min-width: max-content;
+    gap: 2%;
+    align-items: center;
+    padding: $margin-small;
+    text-decoration: none;
+    border-radius: $border-radius;
+    border: none;
+    background-color: $primary-color;
+    @include paragraph-text;
+    font-size: $font-small;
+    color: $background-color;
+    > img {
+      width: 20px;
+    }
+  
+    &:active,
+    &:hover {
+      background-color: $hover-color;
+    }
+}
+
 body{
     margin-inline: $margin-regular;
     margin-block: 0;
     background-color: $background-color;
+}
+
+*{
+    margin: 0;
+    @include paragraph-text;
 }

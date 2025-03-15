@@ -1,22 +1,23 @@
 // @use '../styles/global.scss' as *;
-@use '/src/general_styles/global.scss' as *;
-@use 'src/general_styles/variables' as *;
+@use "/src/general_styles/global.scss" as *;
+@use "src/general_styles/variables" as *;
 
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba($primary-color, 0.5);
-    // height: max-content;
+.header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba($primary-color, 0.5);
+  // height: max-content;
 }
 
-.menu{
-    width: min-content;
-    box-sizing: border-box;
-    position: relative;
-    height: auto;
+.menu {
+  width: min-content;
+  box-sizing: border-box;
+  position: relative;
+  height: auto;
 
- >ul{
+  > ul {
     width: max-content;
     // height: 100%;
     box-sizing: content-box;
@@ -26,132 +27,240 @@
     gap: 15px;
     margin: 0;
     padding: 0;
-    >li{
-        list-style-type: none;
-        
-        >a{
-            @include paragraph-text;
-            text-decoration: none;
-            display: block;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 50px;
-            height: 75px;
-            transition: all .1s ease;
-            width: max-content;
-            position: relative;
-            &::after{
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 3px;
-                bottom: 0;
-                left: 0;
-                transform: scaleX(0);
-                background-color: $primary-color;
-                transition: all .4s ease;
-            }
-            &:focus, &:hover{
-                color: black;
-                &::after{
-                    transform: scaleX(1);
-                }
-            }
+    > li {
+      list-style-type: none;
+
+      > a {
+        @include paragraph-text;
+        text-decoration: none;
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+        height: 75px;
+        transition: all 0.1s ease;
+        width: max-content;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          bottom: 0;
+          left: 0;
+          transform: scaleX(0);
+          background-color: $primary-color;
+          transition: all 0.4s ease;
         }
+        &:focus,
+        &:hover {
+          color: black;
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
     }
- }
+  }
 }
 
-.entrance_mode{
+.entrance_mode {
+  display: grid;
+  grid-template-columns: auto max-content max-content;
+  gap: 30px;
+  box-sizing: border-box;
+  align-items: center;
+
+  .search-label{
+    position: relative;
     display: flex;
-    gap: 30px;
-    align-items: center;
+    box-sizing: border-box;
+    width: 100px;
+    background-color: $action-color;
+    transition: all, .4s ease;
+
+    &.active{
+      width: 200px; border-color: $action-color;
+      box-shadow: 0 0 3px rgba($primary-color, 0.5);
+    }
+
+    >input{
+      margin: 0;
+      position: relative;
+      transition: all .5s ease-out;
+      width: 100%;
+      max-lines: 10px;
+      @include paragraph-text;
+      background-color: $action-color;
+      border: none;
+      padding-inline: $margin-regular*2;
+      padding-block: 10px;
+
+      &:focus{
+        outline: none; /* Видаляє стандартний контур браузера */
+      }
+    }
+
+    >button{
+      display: block;
+      padding-right: 5%;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+    }
+
+  }
 }
 
-.logo_header{
+.logo_header {
+  @include semi-text;
+  font-size: $font-medium;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  gap: 6px;
+  align-items: center;
+  width: min-content;
 
-    @include semi-text;
-    font-size: $font-medium;
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    width: min-content;
-
-    >img{
-        // aspect-ratio: 1/1;
-        width: 45px;
-        height:fit-content;    }
+  > img {
+    // aspect-ratio: 1/1;
+    width: 45px;
+    height: fit-content;
+  }
 }
 
 .cart_header {
-    width: min-content;
-    position: relative;
-    >button{
-        border: none;
-        color: transparent;
-        background-color: transparent;
-        position: relative;
-        z-index: 1;
-        cursor: pointer;
-        >img{
-            position: relative;
-            z-index: 2;
-        }
+  width: min-content;
+  position: relative;
+  transition: all .3s ease-out;
 
-        >.quantity_cart{
-        color: $action-color;
-        position: absolute;
-        z-index: 3;
-        right: 0;
-        top: 0;
-        font-size: 10px;
-        text-align: center;
-        margin: 0;
-        display: block;
-        background: $primary-color;
-        border-radius: 100%;
-        width: 12px;
-        aspect-ratio: 1/1;
-        &::before{
-            content: "";
-            background-color: transparent;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            border: 4px solid rgb(255, 255, 255);
-            border-radius: 50%;
-            transform: translate(-20%, -20%);
-        }
-        }
-
-    }
-
+&.active{
+transform: scale(1.5);
+path{
+  fill: $primary-color;
+}
 }
 
-.login{
-        display: flex;
-        justify-content: center;
-        width: 105px;
-        height: 35px;
-        gap: 2%;
-        align-items: center;
-        // padding-inline: 10%;
-        text-decoration: none;
-        border-radius: $border-radius;
-        border: none;
-        background-color: $primary-color;
-        @include paragraph-text;
-        font-size: $font-small;
-        color: $background-color;
-        >img{
-            width: 20px;
-        }
-
-        &:active, &:hover{
-            background-color: $hover-color;
-        }
+  > button {
+    border: none;
+    color: transparent;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    > svg {
+      position: relative;
+      z-index: 2;
     }
+
+    > .quantity_cart {
+      color: $action-color;
+      position: absolute;
+      z-index: 3;
+      right: 0;
+      top: 0;
+      font-size: 10px;
+      text-align: center;
+      margin: 0;
+      display: block;
+      background: $primary-color;
+      border-radius: 100%;
+      width: 12px;
+      aspect-ratio: 1/1;
+      &::before {
+        content: "";
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        border: 4px solid rgb(255, 255, 255);
+        border-radius: 50%;
+        transform: translate(-20%, -20%);
+      }
+    }
+  }
+}
+
+.login {
+  @include button-style;
+  //   display: flex;
+  //   justify-content: center;
+  //   width: 105px;
+  //   height: 35px;
+  //   gap: 2%;
+  //   align-items: center;
+  //   // padding-inline: 10%;
+  //   text-decoration: none;
+  //   border-radius: $border-radius;
+  //   border: none;
+  //   background-color: $primary-color;
+  //   @include paragraph-text;
+  //   font-size: $font-small;
+  //   color: $background-color;
+  //   > img {
+  //     width: 20px;
+  //   }
+
+  //   &:active,
+  //   &:hover {
+  //     background-color: $hover-color;
+  //   }
+}
+
+.cart_box_wrapper {
+  * {
+    margin: 0;
+  }
+  padding: $margin-regular/4;
+  position: absolute;
+  background-color: $gray-color;
+  width: 400px;
+  height: min-content;
+  overflow-y: scroll;
+  max-height: 40vh;
+  top: 100px;
+  right: $margin-regular;
+  z-index: 1000;
+  box-shadow: 20px 22px 31px -12px rgba(0, 0, 0, 0.84);
+  -webkit-box-shadow: 20px 22px 31px -12px rgba(0, 0, 0, 0.84);
+  -moz-box-shadow: 20px 22px 31px -12px rgba(0, 0, 0, 0.84);
+
+  > button {
+    margin-bottom: $margin-regular;
+    @include button-style;
+    // padding: $margin-regular/2;
+  }
+
+  > .product_cart_box {
+    display: grid;
+    margin-bottom: 5%;
+    grid-template-columns: min-content auto max-content;
+    gap: 5%;
+
+    .detail_order {
+      display: flex;
+      flex-direction: column;
+      * {
+        margin: 0;
+      }
+    }
+
+    > img {
+      float: left;
+      aspect-ratio: 1/1;
+      width: 50px;
+    }
+
+    button {
+      float: right;
+      @include button-style;
+    }
+  }
+}

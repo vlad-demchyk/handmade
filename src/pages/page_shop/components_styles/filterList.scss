@@ -1,0 +1,36 @@
+@use "/src/general_styles/global.scss" as *;
+@use "src/general_styles/variables" as *;
+
+.filter-wrapper{
+    display: flex;
+    flex-direction: column;
+
+    h2{
+    @include bold-text;
+    }
+    
+    button{
+        @include button-style;
+    }
+
+
+
+    .filter-menu{
+        display: flex;
+        gap: $gap-regular;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        // background-color: #f5f5f5;
+        // border-bottom: 1px solid #e0e0e0;
+        @include semi-text;
+
+        &.active{
+            color: $primary-color;
+        }
+
+        span.active{color: $primary-color;}
+    }
+}
+

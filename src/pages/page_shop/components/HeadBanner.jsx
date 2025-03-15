@@ -8,9 +8,9 @@ function HeadBanner() {
     const IMAGE_PRODUCTS = [
         FIRST_BANNER, 
         SECOND_BANNER, 
-        "htp://static.vecteezy.com/system/resources/previews/025/025/055/non_2x/promo-banner-with-knitted-clothes-balls-of-wool-knitting-item-skein-of-yarn-tools-equipment-for-knitwork-handicraft-handmade-needlework-hobby-knitting-studio-for-poster-advertising-vector.jpg"
+        "https://th.bing.com/th/id/R.43112eb4a8ef502d1dd93438943c6b7f?rik=XYZxKCMAlrRG6Q&pid=ImgRaw&r=0"
     ];
-  const wrapper = useRef(null);
+  // const wrapper = useRef(null);
   const intervalRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -40,7 +40,7 @@ function HeadBanner() {
   };
 
   return (
-    <div ref={wrapper} className="wrapper_banner">
+    <div className="wrapper_banner">
       <button
         className="arrowStyles left"
         onClick={() => handleBack()}
@@ -54,7 +54,7 @@ function HeadBanner() {
           return (
             <div
               onClick={() => {setCurrentSlide(index); startAutoSlide()}}
-              className={`dot ${index == currentSlide ? "active" : ""}`}
+              className={`dot ${index === currentSlide ? "active" : ""}`}
               key={index}
               aria-label="point-navigation"
             ></div>
@@ -77,7 +77,7 @@ function HeadBanner() {
                 Explore our curated collection of handcrafted goods that bring
                 warmth and uniqueness to your life.
               </p>
-              <a href="#">SHOP NOW</a>
+              <a href="#link">SHOP NOW</a>
             </div>
           </div>
         );
@@ -85,23 +85,6 @@ function HeadBanner() {
     </div>
   );
 
-  //   return (
-  // <div className="headBanner">
-  //   <p>Welcome to Shop</p>
-  //   <h1>
-  //     HANDMADE WITH <br />
-  //     <span>LOVE</span>
-  //   </h1>
-  //   <p>
-  //     Explore our curated collection of handcrafted goods that bring warmth
-  //     and uniqueness to your life.
-  //   </p>
-  //   <a href="#">SHOP NOW</a>
-  //   <div className='img'>
-  //   <img src={FIRST_PRCT} alt="image_by_product" />
-  //   </div>
-  // </div>
-  //   );
 }
 
 export default HeadBanner;

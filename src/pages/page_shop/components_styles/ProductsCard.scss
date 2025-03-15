@@ -7,7 +7,6 @@
 
 .products_layout {
   display: grid;
-  margin-block: $margin-regular;
   grid-template-columns: repeat(3, 1fr);
   gap: $gap-small;
   // overflow: hidden;
