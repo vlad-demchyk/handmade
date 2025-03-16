@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/shop_handmade/static/css/main.3792f4ec.css",
+    "main.js": "/shop_handmade/static/js/main.91bc194f.js",
+    "static/js/453.518254f4.chunk.js": "/shop_handmade/static/js/453.518254f4.chunk.js",
+    "static/media/second_banner.png": "/shop_handmade/static/media/second_banner.1f4b9ee1fc6eb04506fc.png",
+    "static/media/SegoeUI-Regular.ttf": "/shop_handmade/static/media/SegoeUI-Regular.4151814cffaf069d9247.ttf",
+    "static/media/SegoeUI-Bold.ttf": "/shop_handmade/static/media/SegoeUI-Bold.72edbd1ba8c630e43cbd.ttf",
+    "static/media/segoe-ui-semibold.ttf": "/shop_handmade/static/media/segoe-ui-semibold.495a56fd4544f41e7f81.ttf",
+    "static/media/first_banner.png": "/shop_handmade/static/media/first_banner.ca0356dc9ac813367642.png",
+    "index.html": "/shop_handmade/index.html",
+    "main.3792f4ec.css.map": "/shop_handmade/static/css/main.3792f4ec.css.map",
+    "main.91bc194f.js.map": "/shop_handmade/static/js/main.91bc194f.js.map",
+    "453.518254f4.chunk.js.map": "/shop_handmade/static/js/453.518254f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3792f4ec.css",
+    "static/js/main.91bc194f.js"
+  ]
+}

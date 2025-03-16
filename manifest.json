@@ -1,0 +1,20 @@
+{
+  "short_name": "Crafted Treasures",
+  "name": "HANDMADE WITH LOVE",
+  "icons": [
+    {
+      "src": "images/icons/logo_139x2.png",
+      "sizes": "139x139",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/logo_45x2.png",
+      "type": "image/png",
+      "sizes": "45x45"
+    } 
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FBFBFB",
+  "background_color": "#FBFBFB"
+}
