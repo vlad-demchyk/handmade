@@ -75,10 +75,10 @@ const Header = () => {
   const { products, filteredProducts, setFilteredProducts } =
     useContext(FetchContext);
   const [searchArea, setSearchArea] = useState("");
-  const ICON_LOGO = "/images/icons/logo_45x2.png";
+  const ICON_LOGO = `${process.env.PUBLIC_URL}/images/icons/logo_45x2.png`
   const [onFocus, setOnFocus] = useState(false);
   // const ICON_CART = "/images/icons/cart_icon.svg";
-  const ICON_LOGIN = "/images/icons/login.svg";
+  const ICON_LOGIN = `${process.env.PUBLIC_URL}/images/icons/login.svg`;
   return (
     <header className="header">
       <nav className="menu">
